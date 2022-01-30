@@ -1,6 +1,10 @@
-# HOWTO (Add Stuff To The Website)
+# HOWTO
 
-You must first setup and install all the respositories for your machine. They are organised like so:
+This is a guide for working with [Lacuna V3](https://lacunalab.org) website.
+
+You will need to setup and install all the respositories for your machine.
+
+# Overview
 
 ```
 REPOSITORIES
@@ -15,7 +19,7 @@ NB: EACH MUST BE IN SAME ROOT FOLDER
 
 # Prerequisites
 
-You will need to use a terminal and have the following installed:
+Using a terminal, you must have the following installed:
 
 ```
 PREREQS
@@ -27,8 +31,6 @@ PNPM = alternative to npm
 ```
 
 # Installation
-
-When working on the website, you will need **two terminals open** - one for the *backend* and one for the *frontend*.
 
 ```
 CLONE
@@ -50,20 +52,42 @@ cd lacuna-v3 && pnpm i && cd ../
 cd eze-legacy && pnpm i && cd ../
 ```
 
-Now we will run in development:
+# Edit Website
+
+Each time you want to add something to the website, you will need to start up the servers.
+
+You will need **two terminals open** - one for the *backend* and one for the *frontend*:
 
 ```
-IN 1ST TERMINAL
-===============
+IN 1ST TERMINAL (PORT 5000)
+===========================
 
 cd eze-legacy
 pnpm run dev
 
-IN 2ND TERMINAL
-===============
+IN 2ND TERMINAL (PORT 8888)
+===========================
 
-cd eze-legacy
+cd lacuna-v3
 pnpm run dev
 ```
 
-You can now view **backend** in [localhost:3000
+You can now view **backend** in [localhost:5000](http://localhost:5000) and **frontend** in [localhost:8888](http://localhost:8888)
+
+Inside the **frontned** is a GUI for adding and editing data.
+
+*You will be able to see your changes immediately at [localhost:8888](http://localhost:8888)**
+
+# Make It Live
+
+Once you are **100% happy with the changes** visible in [localhost:8888](http://localhost:8888), you can build and push a new version online.
+
+```
+BUILD
+=====
+
+cd lacuna-v3
+pnpm run build
+
+```
+
